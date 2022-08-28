@@ -13,7 +13,6 @@ export default {
   },
   methods: {
     goToPokemonList() {
-      console.log(this.$route);
       router.push(`/pokemonList/${this.page}`);
     },
   },
