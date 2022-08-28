@@ -26,12 +26,13 @@ defineProps({
   height: 56px;
   border-bottom: 2px solid #2f6db5;
   .container {
-    max-width: 1200px;
+    max-width: 1024px;
     margin-inline: auto;
   }
   .header-logo {
     display: inline-block;
     float: left;
+    height: 54px;
   }
   .header-btn {
     display: inline-block;

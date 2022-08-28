@@ -163,7 +163,6 @@ export default {
     line-height: 100%;
     align-items: center;
     text-align: center;
-
     color: #3564ae;
   }
 }
