@@ -1,91 +1,56 @@
 <script setup>
-import { RouterLink, RouterView } from "vue-router";
-import HelloWorld from "./components/HelloWorld.vue";
+import { RouterView } from "vue-router";
+import Header from "./components/headerNavigation.vue";
+</script>
+<script>
+import router from "./router"; 
+export default {
+  data() {
+    return {
+      route: this.$route.name,
+      page: 1
+    };
+  },
+  methods: {
+    goToPokemonList() {
+      console.log(this.$route);
+      router.push(`/pokemonList/${this.page}`);
+    },
+  },
+};
 </script>
 
 <template>
-  <header>
-    <img
-      alt="Vue logo"
-      class="logo"
-      src="@/assets/logo.svg"
-      width="125"
-      height="125"
-    />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
+  <Header>
+    <template v-slot:logo>
+      <a href="/"><img src="./assets/img_poke_logo.png" alt="Pokemon logo" class="logo" /></a>
+    </template>
+    <template v-slot:btn v-if="$route.name === 'home'">
+      <button class="btn" @click="goToPokemonList()">Pokemon list</button>
+    </template>
+  </Header>
 
   <RouterView />
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
 .logo {
-  display: block;
-  margin: 0 auto 2rem;
+  height: 56px;
+  padding-inline-start: 18px;
+  padding-block-start: 7px;
+  padding-block-end: 12px;
 }
 
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
+.btn {
+  border: 1px solid;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 100%;
   background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+  padding-block: 10px;
+  padding-inline: 20px;
+  border-radius: 10px;
 }
 </style>
