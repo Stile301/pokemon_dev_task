@@ -140,12 +140,12 @@ export default {
       background: #ffffff;
       border-radius: 16px;
       padding: 24px;
-      :first-child{
-        margin-block-end:12px;
+      :first-child {
+        margin-block-end: 12px;
         height: 18px;
       }
-      :not(:first-child){
-        margin-block:12px;
+      :not(:first-child) {
+        margin-block: 12px;
         height: 30px;
       }
       .pod-primText {

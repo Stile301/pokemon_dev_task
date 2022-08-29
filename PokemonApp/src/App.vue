@@ -7,7 +7,7 @@ import router from "./router";
 export default {
   data() {
     return {
-      route: this.$route.name
+      route: this.$route.name,
     };
   },
   methods: {

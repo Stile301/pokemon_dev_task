@@ -39,6 +39,8 @@ export default {
 
       this.pokemonData.push(firstPokemon);
       this.pokemonData.push(secondPokemon);
+      console.log(firstPokemon.sprites.back_default)
+      console.log(secondPokemon.sprites.back_default)
       await new Promise((r) => setTimeout(r, 5000));
       if (firstPokemon.weight > secondPokemon.weight) {
         localStorage.setItem("winner", firstPokemon.id);
@@ -119,6 +121,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "../assets/mixins.scss";
+
 .container {
   display: flex;
   align-items: center;
