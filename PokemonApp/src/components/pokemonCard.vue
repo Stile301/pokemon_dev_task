@@ -23,6 +23,8 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@import "../assets/mixins.scss";
+
 .card {
   background: #ffffff;
   box-shadow: inset -1px -1px 0px 1px #c4c4c4;
@@ -40,11 +42,7 @@ export default {
     }
     p {
       width: 100%;
-      font-family: "Montserrat";
-      font-style: normal;
-      font-weight: 700;
-      font-size: 16px;
-      line-height: 100%;
+      @include text(16px, 700);
       align-items: center;
       text-align: center;
       color: #3564ae;

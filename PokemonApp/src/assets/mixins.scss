@@ -1,0 +1,7 @@
+@mixin text($size, $weight) {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: 100%;
+}

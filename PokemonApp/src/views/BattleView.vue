@@ -1,5 +1,5 @@
 <script setup>
-import TheBattle from '@/components/TheBattle.vue'
+import TheBattle from "@/components/TheBattle.vue";
 </script>
 
 <template>

@@ -58,7 +58,7 @@ export default {
   },
   components: { PokemonCard },
   async mounted() {
-    if (this.hasWinner) {
+    if (localStorage.getItem("winner")) {
       this.winnerData = await fetch(
         `https://pokeapi.co/api/v2/pokemon/${localStorage.getItem("winner")}/`
       )
@@ -118,6 +118,7 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@import "../assets/mixins.scss";
 .container {
   display: flex;
   align-items: center;
@@ -139,11 +140,7 @@ export default {
     height: 47px;
     background: #3564ae;
     border-radius: 8px;
-    font-family: "Montserrat";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 15px;
-    line-height: 100%;
+    @include text(15px, 700);
     align-items: center;
     text-align: center;
     color: #ffffff;
@@ -156,11 +153,7 @@ export default {
   flex-direction: row;
   .vsText {
     width: 170px;
-    font-family: "Montserrat";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 100%;
+    @include text(32px, 700);
     align-items: center;
     text-align: center;
     color: #3564ae;
@@ -171,10 +164,7 @@ export default {
   flex-direction: column;
   .winnerText {
     width: 170px;
-    font-family: "Montserrat";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 32px;
+    @include text(32px, 700);
     line-height: 100%;
     align-items: center;
     text-align: center;
@@ -186,11 +176,7 @@ export default {
     height: 47px;
     background: #3564ae;
     border-radius: 8px;
-    font-family: "Montserrat";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 15px;
-    line-height: 100%;
+    @include text(15px, 700);
     align-items: center;
     text-align: center;
     color: #ffffff;
@@ -202,11 +188,7 @@ export default {
     height: 47px;
     background: transparent;
     border-radius: 8px;
-    font-family: "Montserrat";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 15px;
-    line-height: 100%;
+    @include text(15px, 700);
     align-items: center;
     text-align: center;
     color: #3564ae;

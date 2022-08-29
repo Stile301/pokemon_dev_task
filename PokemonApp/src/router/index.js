@@ -9,17 +9,15 @@ const router = createRouter({
       component: () => import("../views/BattleView.vue"),
     },
     {
-      path: "/pokemonList/:page",
+      path: "/pokemonList/",
       name: "pokemonList",
-      props: true,
       component: () => import("../views/PokemonList.vue"),
-      children: [
-        {
-          path: "pokemon/:id",
-          component: () => import("../views/PokemonDetails.vue"),
-          props: true,
-        },
-      ],
+    },
+    {
+      path: "/pokemon/:pokemonName",
+      name: "pokemonDetails",
+      component: () => import("../views/PokemonDetails.vue"),
+      props: true,
     },
   ],
 });

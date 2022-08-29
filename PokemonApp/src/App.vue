@@ -3,17 +3,16 @@ import { RouterView } from "vue-router";
 import Header from "./components/headerNavigation.vue";
 </script>
 <script>
-import router from "./router"; 
+import router from "./router";
 export default {
   data() {
     return {
-      route: this.$route.name,
-      page: 1
+      route: this.$route.name
     };
   },
   methods: {
     goToPokemonList() {
-      router.push(`/pokemonList/${this.page}`);
+      router.push(`/pokemonList`);
     },
   },
 };
@@ -22,7 +21,9 @@ export default {
 <template>
   <Header>
     <template v-slot:logo>
-      <a href="/"><img src="./assets/img_poke_logo.png" alt="Pokemon logo" class="logo" /></a>
+      <a href="/"
+        ><img src="./assets/img_poke_logo.png" alt="Pokemon logo" class="logo"
+      /></a>
     </template>
     <template v-slot:btn v-if="$route.name === 'home'">
       <button class="btn" @click="goToPokemonList()">Pokemon list</button>
@@ -32,7 +33,9 @@ export default {
   <RouterView />
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "./assets/mixins.scss";
+
 .logo {
   height: 56px;
   padding-inline-start: 18px;
@@ -42,11 +45,7 @@ export default {
 
 .btn {
   border: 1px solid;
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 100%;
+  @include text(14px, 500);
   background-color: transparent;
   padding-block: 10px;
   padding-inline: 20px;

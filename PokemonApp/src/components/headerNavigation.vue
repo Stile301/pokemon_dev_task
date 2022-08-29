@@ -1,12 +1,3 @@
-<script setup>
-defineProps({
-  msg: {
-    type: String,
-    required: true,
-  },
-});
-</script>
-
 <template>
   <div class="header">
     <div class="container">
@@ -37,8 +28,8 @@ defineProps({
   .header-btn {
     display: inline-block;
     float: right;
-    padding-block: 8px;
-    padding-inline: 10;
+    margin-block: 8px;
+    margin-inline: 10px;
   }
 }
 </style>
